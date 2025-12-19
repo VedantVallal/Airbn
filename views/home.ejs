@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Home Listing</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1e293b;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            color: white;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Main section */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* space between boxes */
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    height: 150px; /* fixed height */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+        .container h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Home cards */
+        .home-card {
+            background-color: rgb(163, 253, 149);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            width: 20vw;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-card h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Home Listing</h2>
+        <div class="nav-links">
+            <a href="/home">Home</a>
+            <a href="/addhome">Add Home</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <h1>Available Homes</h1>
+    <div class="container">
+
+        <!-- STATIC SAMPLE CARD (REMOVE LATER) -->
+        <% if (homes.length===0) { %>
+            <p>No homes available.</p>
+            <% } %>
+
+                <% homes.forEach(home=> { %>
+                    <div class="home-card">
+                        <h3>
+                            <%= home.home_name %>
+                        </h3>
+                        <p><strong>ID:</strong>
+                            <%= home.home_id %>
+                        </p>
+                        <p><strong>Price:</strong> ₹<%= home.home_price %>
+                        </p>
+                        <p><strong>Rating:</strong>
+                            <%= home.home_rating %> ⭐
+                        </p>
+                    </div>
+                    <% }) %>
+
+
+
+    </div>
+
+</body>
+
+</html>

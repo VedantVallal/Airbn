@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+        }
+
+        .navbar {
+            background-color: #1e293b;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            color: white;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 450px;
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 18px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Home Listing</h2>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="addhome.html">Add Home</a>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h1>Add Home</h1>
+
+        <!-- FORM -->
+        <form action="/thankyou" method="post">
+            <!-- You will replace action & method later -->
+
+            <label>Home Name</label>
+            <input type="text" name="home_name" required>
+
+            <label>Home ID</label>
+            <input type="text" name="home_id" required>
+
+            <label>Home Price</label>
+            <input type="number" name="home_price" required>
+
+            <label>Home Rating</label>
+            <input type="number" step="0.1" name="home_rating" required>
+
+            <button type="submit">Submit Home</button>
+        </form>
+
+        <!-- Backend will:
+             1. Receive form data
+             2. Save home
+             3. Redirect to thankyou page
+        -->
+
+    </div>
+
+</body>
+</html>
